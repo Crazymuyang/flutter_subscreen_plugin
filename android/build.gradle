@@ -2,7 +2,7 @@ group 'com.rex.flutter_subscreen_plugin'
 version '1.0'
 
 buildscript {
-    ext.kotlin_version = '1.7.21'
+    ext.kotlin_version = '2.1.0'
     repositories {
         maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }//阿里云通道下载库加速
         google()
@@ -10,7 +10,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath 'com.android.tools.build:gradle:8.5.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -28,24 +28,24 @@ apply plugin: 'kotlin-android'
 
 android {
     namespace 'com.rex.flutter_subscreen_plugin'
-    compileSdkVersion 31
+    compileSdkVersion 33
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     java {
         toolchain {
-            languageVersion = JavaLanguageVersion.of(8)
+            languageVersion = JavaLanguageVersion.of(17)
         }
     }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
     }
     lintOptions {
         disable 'InvalidPackage'
